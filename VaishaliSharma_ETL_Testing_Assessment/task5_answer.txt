@@ -1,0 +1,37 @@
+1. Describe how you would perform data quality checks to ensure that the migrated data is accurate and complete.
+
+Answer :
+
+To ensure data migration accuracy and completeness, I would follow the below steps:
+
+1. Pre-Migration Validations:
+	i. Source-Target Schema Mapping: This will verify that the source and target schema are correctly mapped, including data types, constraints, and relationships.
+   ii. Row Counts: This compares the total number of rows between the source and the target before migration begins.
+  iii. Data Profiling: Will use SQL queries to assess the source data's quality.
+2. During Migration:
+	i. Record Counts in Batches: This check will monitor row counts transferred in each batch and compare with expected counts.
+   ii. Data Profiling: Will use SQL queries to assess the target data's quality.
+3. Post-Migration Validations:
+	i. Reconciliation Testing: This will ensure that all records in the source system exist in the target system.
+		a. Row Count Validation: This compares the number of rows in the source and target.
+		b. Column-Level Validation: This validates specific column values to ensure data accuracy.
+   ii. Boundary Condition Testing: This will test the data that falls on the edges of constraints, such as maximum or minimum values.
+  iii. Null/Default Value Checks: This ensures no unintended null or default values appear in the target data.
+   iv. Duplicate Data Validation: This verifies that there are no unexpected duplicates in the target system.
+4. Automation of Checks:
+	i. To improve the efficiency of these tests, I would also leverage automation frameworks (e.g. PyTest).
+   ii. This can help in reducing the manual effort and chances of human error.
+   
+2. Outline a strategy for performance testing of the ETL process. Include considerations for handling large volumes of data and ensuring the ETL process completes within acceptable time frames.
+
+Answer :
+
+I would use the below strategy for Performance Testing of the ETL Process - 
+
+1. Determine acceptable processing time for different data volumes.
+2. Baseline Testing : Begin with small data sets to validate functionality.
+3. Volume Testing : Gradually increase data size to simulate production-like loads.
+4. Stress Testing : Push beyond expected volumes to identify failure points.
+5. Spike Testing : Test the ETL with sudden, large data loads to measure responsiveness.
+6. Optimize ETL performance by using partitioning, indexing and incrementaal load.
+7. Keep track of database peformance by observing query execution time.
