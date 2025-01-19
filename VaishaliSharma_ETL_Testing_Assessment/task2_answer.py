@@ -61,7 +61,7 @@ def load_data(engine, data):
         2. Creating both tables if they don't exist
         3. Loading data into the tables
         
-    param engine : 
+    param engine : Interface to connect with the database
     param data : Data from the flat file
     """
     try:
